@@ -49,7 +49,7 @@ while True:
                 output = client_cmd.recv(100000).decode("utf-8")
                 messegae += 1
                 print (messegae)
-                if lenmessage == messegae:
+                if lenmessage == messegae or lenmessage == 0:
                     url = "https://database-query.v3.microgen.id/api/v1/fb6db565-2e6c-41eb-bf0f-66f43b2b75ae/Kafka_Messages"
                     jsons = {"topic":lists.json()[i]['connector'],"messages":output,"createdBy":lists.json()[i]['createdBy']['firstName']+" "+lists.json()[i]['createdBy']['lastName']}
                     response = requests.post(url,json=jsons)
