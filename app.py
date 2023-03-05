@@ -43,7 +43,7 @@ while True:
         messegae = 0
         urlen = "https://database-query.v3.microgen.id/api/v1/fb6db565-2e6c-41eb-bf0f-66f43b2b75ae/Kafka_Messages?$select[0]=topic&topic="+lists.json()[i]['connector']+""
         response = requests.get(urlen)
-        lenmessage = len(response.json)
+        lenmessage = len(response.json())
         while progress:
             try:
                 output = client_cmd.recv(100000).decode("utf-8")
