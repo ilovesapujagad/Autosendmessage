@@ -6,11 +6,12 @@ import requests
 import json
 # app = Flask(__name__)
 
+check = False
 
 
 # @app.get('/message')
 # def messegae():
-while True:
+while check:
     url = "https://database-query.v3.microgen.id/api/v1/fb6db565-2e6c-41eb-bf0f-66f43b2b75ae/KafkaConnect?$select[0]=connector&$select[1]=createdBy"
     lists = requests.get(url)
     n = len(lists.json())
