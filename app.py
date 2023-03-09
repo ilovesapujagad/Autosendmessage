@@ -6,7 +6,7 @@ import requests
 import json
 # app = Flask(__name__)
 
-check = False
+check = True
 
 
 # @app.get('/message')
@@ -31,9 +31,9 @@ while check:
             output = client_cmd.recv(10000).decode("utf-8")
             print (output)
 
-        ip = '10.10.65.5'
-        un = 'sapujagad'
-        pw = 'kayangan'
+        ip = '10.10.65.8'
+        un = 'ubuntu'
+        pw = '!P2o3i4u'
 
         ssh_con(ip,un,pw)
         client_cmd = client.invoke_shell()
@@ -58,5 +58,6 @@ while check:
             except socket.timeout:
                 progress = False
                 messegae = 0
+                client.close()
                 pass
-    client.close()
+    
