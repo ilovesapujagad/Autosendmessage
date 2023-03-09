@@ -21,7 +21,7 @@ while check:
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             # print ("Connecting to device/VM: %s" % ip)
-            client.connect(ip, username=un, password=pw,timeout=10)
+            client.connect(ip, username=un, password=pw,port=2222,timeout=10)
 
 
         def cmd_io (command):
